@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Vue JS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        
+    </head>
+    <body>
+        <div id="app">
+            {{text}} This is the shit
+        </div>
+        <div id="listContainer">
+            <h2>Remaining</h2>
+            <ul>
+                <li v-for="item in incomp"><input type="checkbox" v-model="item.complete"/>{{item.name}}</li>
+            </ul>
+            <h2>Completed</h2>
+            <ul>
+                <li v-for="item in comp">
+                    {{item.name}}
+                </li>
+            </ul>
+        </div>
+        <div id="myCounter" :style="{backgroundColor: `hsl(${x}, 80%, 50%)`}" @mousemove="xCoord">
+            <p><button @click="upOne">+</button>{{counterVal}}<button @click="downOne">-</button></p>
+            <p> Pixels from the side: {{x}}</p>
+        </div>
+
+        <div id="templateHolder">
+            <task-list></task-list>
+        </div>
+
+        <div id='articles'>
+
+                <story title="Hey Gomer" body="The Senate has silenced Elizabeth Warren. And by doing so, majority Republicans just handed the liberal firebrand a megaphone"></story>
+
+<story title="Hey Gomer" body="The Senate has silenced Elizabeth Warren. And by doing so, majority Republicans just handed the liberal firebrand a megaphone"></story>
+<story title="Hey Gomer" body="The Senate has silenced Elizabeth Warren. And by doing so, majority Republicans just handed the liberal firebrand a megaphone"></story>
+
+
+        </div>
+        
+        <script src="scripts/hello.js"></script>
+        <script src="scripts/lists.js"></script>
+        <script src="scripts/dataBind.js"></script>
+        <script src="scripts/pageTemplate.js"></script>
+        <script src="scripts/articles.js"></script>
+    </body>
+</html>
